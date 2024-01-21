@@ -12,3 +12,7 @@ cargo loco start
 ```
 
 After the server starts, open your web browser and navigate to http://127.0.0.1:3000 to access the chat rooms.
+
+npm install @vitejs/plugin-react
+cd frontend
+pnpm update
