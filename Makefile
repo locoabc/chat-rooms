@@ -158,7 +158,11 @@ saas_pg:
 lightweight_service:
 	LOCO_APP_NAME=lightweight_service LOCO_TEMPLATE=lightweight-service loco new 
 
-
+# make sure vite is installed
+local:
+	perl -pi -e 's!localhost\:!192.168.1.231:!' frontend/src/App.jsx
+	cd frontend && pnpm build
+	egrep 'ws\:\/\/'  frontend/src/App.jsx
 help:
 	@echo "Usage: make <target> <argument>"
 	@echo

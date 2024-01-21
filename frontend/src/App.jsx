@@ -26,7 +26,7 @@ function App() {
 
     onceRef.current = true;
 
-    const socket = io("ws://localhost:3000");
+    const socket = io("ws://192.168.1.231:3000");
     setSocket(socket);
 
     socket.on("connect", () => {
