@@ -33,6 +33,7 @@ manpage:
 clean: cleantmp
 	-rm -rf *~ 
 	-rm -rf docs/*.1
+	-rm -rf ~.cargo/git/checkouts/*
 	-find . -type f -name *~   -exec rm -f {} \;
 	-find . -type f -name *.ps  -exec rm -f {} \;
 	-find . -type d -name target  -exec rm -rf {} \;
