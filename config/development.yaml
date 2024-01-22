@@ -44,6 +44,7 @@ server:
       # Duration time in milliseconds.
       timeout: 5000
     static:
+      precompressed: true
       enable: true
       must_exist: true
       folder:
