@@ -6,9 +6,8 @@ NEWRELEASE	= $(shell echo $$(($(RELEASE) + 1)))
 PROJECT_NAME    = chat-rooms
 TOPDIR = $(shell pwd)
 MANPAGES =
-#A2PS2S1C  = /usr/bin/enscript -H1 --highlight-bar-gray=08 -fCourier8 -Ebash
 A2PS2S1C  = /usr/bin/enscript -H1 --highlight-bar-gray=08 -fCourier8 -Ebash  --non-printable-format=space
-#A2PS2S1C  = /usr/bin/enscript -H1 --highlight-bar-gray=08 -fconsolars7 -Ebash
+
 A2PSTMP   = ./tmp
 DOCS      = ./docs
 
@@ -49,7 +48,6 @@ clean_hardest: clean_rpms
 SRC1= README.md Makefile Cargo.toml myapp_lightweight_service-dir-layout.txt
 SRC2= src/app.rs src/bin/main.rs  src/controllers/guide.rs  src/controllers/home2.rs  src/controllers/home.rs  src/controllers/mod.rs  src/lib.rs  src/views/home.rs  src/views/mod.rs
 SRC3= tests/requests/guide.rs  tests/requests/home2.rs  tests/requests/home.rs  tests/requests/mod.rs  tests/requests/snapshots/can_get_home2@home2_request.snap  tests/requests/snapshots/home2_request.snap tests/requests/snapshots/can_get_home@home_request.snap
-#SRC2= manage.py profiles_projects-dir-layout.txt
 
 tmpdir:
 	mkdir -p ${A2PSTMP}/src/bin ${A2PSTMP}/src/controllers ${A2PSTMP}/src/views ${A2PSTMP}/tests/requests/snapshots
@@ -122,8 +120,6 @@ cmkrest:
 	(cd cmkrest &&  cargo install  --force --path .)
 
 install2:
-#	cd sqld/sqlc    && cargo install  --force --path .
-#	cd sqld/sqlc    && cargo install  --force --path .
 	ls -lrt ${HOME}/.cargo/bin
 
 installcmk:
@@ -172,6 +168,7 @@ help:
 	@echo "  pdf                 Generate selected files in pdf and copy into ./docs"
 	@echo "  allpdf              Generate selected files in pdf and copy into vmware hgfs"
 	@echo "  test                   build and test run"
+	@echo "  start                  install and start the app"
 	@echo "  format                 run cargo fmt to format the rust code"
 	@echo "  build                  call up cargo build"
 	@echo "  examples               build all test programs in examples dir"
