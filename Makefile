@@ -108,7 +108,8 @@ pull:
 install:
 	cargo install  --force --path .
 	ls -lrt ${HOME}/.cargo/bin | tail -3 
-
+start: install
+	 chat_rooms-cli start -b 192.168.241.128
 cmk-agent-ctl:
 	(cd cmk-agent-ctl && cargo install  --force --path . )
 cmd-demo:
